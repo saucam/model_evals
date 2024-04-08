@@ -1,0 +1,62 @@
+{
+  "results": {
+    "arc_challenge": {
+      "acc": 0.5452218430034129,
+      "acc_stderr": 0.014551507060836357,
+      "acc_norm": 0.5836177474402731,
+      "acc_norm_stderr": 0.014405618279436176
+    },
+    "arc_easy": {
+      "acc": 0.819023569023569,
+      "acc_stderr": 0.00790000566042332,
+      "acc_norm": 0.8042929292929293,
+      "acc_norm_stderr": 0.008141015407566888
+    },
+    "boolq": {
+      "acc": 0.8519877675840979,
+      "acc_stderr": 0.006210949869232172
+    },
+    "hellaswag": {
+      "acc": 0.6275642302330213,
+      "acc_stderr": 0.004824655406075562,
+      "acc_norm": 0.8125871340370444,
+      "acc_norm_stderr": 0.0038944505016930368
+    },
+    "openbookqa": {
+      "acc": 0.338,
+      "acc_stderr": 0.021175665695209407,
+      "acc_norm": 0.45,
+      "acc_norm_stderr": 0.022270877485360437
+    },
+    "piqa": {
+      "acc": 0.8139281828073993,
+      "acc_stderr": 0.009079851894097856,
+      "acc_norm": 0.823177366702938,
+      "acc_norm_stderr": 0.008901456201658635
+    },
+    "winogrande": {
+      "acc": 0.7292817679558011,
+      "acc_stderr": 0.012487904760626306
+    }
+  },
+  "versions": {
+    "arc_challenge": 0,
+    "arc_easy": 0,
+    "boolq": 1,
+    "hellaswag": 0,
+    "openbookqa": 0,
+    "piqa": 0,
+    "winogrande": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Nereus-7B,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

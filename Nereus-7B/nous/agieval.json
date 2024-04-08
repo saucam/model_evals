@@ -1,0 +1,73 @@
+{
+  "results": {
+    "agieval_aqua_rat": {
+      "acc": 0.20078740157480315,
+      "acc_stderr": 0.025184836154107836,
+      "acc_norm": 0.20078740157480315,
+      "acc_norm_stderr": 0.025184836154107847
+    },
+    "agieval_logiqa_en": {
+      "acc": 0.36098310291858676,
+      "acc_stderr": 0.018838352954538687,
+      "acc_norm": 0.38402457757296465,
+      "acc_norm_stderr": 0.019076755948732347
+    },
+    "agieval_lsat_ar": {
+      "acc": 0.23478260869565218,
+      "acc_stderr": 0.028009647070930118,
+      "acc_norm": 0.23043478260869565,
+      "acc_norm_stderr": 0.027827807522276156
+    },
+    "agieval_lsat_lr": {
+      "acc": 0.46862745098039216,
+      "acc_stderr": 0.022118441805732515,
+      "acc_norm": 0.47843137254901963,
+      "acc_norm_stderr": 0.022141480877788083
+    },
+    "agieval_lsat_rc": {
+      "acc": 0.5650557620817844,
+      "acc_stderr": 0.030282731632881116,
+      "acc_norm": 0.5724907063197026,
+      "acc_norm_stderr": 0.03021966207183805
+    },
+    "agieval_sat_en": {
+      "acc": 0.7378640776699029,
+      "acc_stderr": 0.030716697656140775,
+      "acc_norm": 0.7427184466019418,
+      "acc_norm_stderr": 0.03053089244612382
+    },
+    "agieval_sat_en_without_passage": {
+      "acc": 0.4563106796116505,
+      "acc_stderr": 0.03478794599787744,
+      "acc_norm": 0.4563106796116505,
+      "acc_norm_stderr": 0.03478794599787744
+    },
+    "agieval_sat_math": {
+      "acc": 0.37272727272727274,
+      "acc_stderr": 0.0326739568483895,
+      "acc_norm": 0.35909090909090907,
+      "acc_norm_stderr": 0.032417413727526295
+    }
+  },
+  "versions": {
+    "agieval_aqua_rat": 0,
+    "agieval_logiqa_en": 0,
+    "agieval_lsat_ar": 0,
+    "agieval_lsat_lr": 0,
+    "agieval_lsat_rc": 0,
+    "agieval_sat_en": 0,
+    "agieval_sat_en_without_passage": 0,
+    "agieval_sat_math": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Nereus-7B,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

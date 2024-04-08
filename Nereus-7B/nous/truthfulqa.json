@@ -1,0 +1,24 @@
+{
+  "results": {
+    "truthfulqa_mc": {
+      "mc1": 0.3684210526315789,
+      "mc1_stderr": 0.016886551261046042,
+      "mc2": 0.5431898242496167,
+      "mc2_stderr": 0.015435416558938087
+    }
+  },
+  "versions": {
+    "truthfulqa_mc": 1
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Nereus-7B,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
