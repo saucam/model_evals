@@ -1,10 +1,10 @@
 {
   "results": {
     "truthfulqa_mc": {
-      "mc1": 0.22643818849449204,
-      "mc1_stderr": 0.014651337324602597,
-      "mc2": 0.480621063397654,
-      "mc2_stderr": 0.01592885894066511
+      "mc1": 0.22888616891064872,
+      "mc1_stderr": 0.014706994909055025,
+      "mc2": 0.4839799429448262,
+      "mc2_stderr": 0.0159965990083949
     }
   },
   "versions": {
@@ -12,7 +12,7 @@
   },
   "config": {
     "model": "hf-causal",
-    "model_args": "pretrained=mrm8488/bert-tiny-finetuned-sms-spam-detection,trust_remote_code=",
+    "model_args": "pretrained=mrm8488/bert-tiny-finetuned-sms-spam-detection,trust_remote_code=False",
     "num_fewshot": 0,
     "batch_size": "auto",
     "device": "cuda:0",
