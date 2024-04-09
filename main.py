@@ -19,6 +19,7 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     tasks = []
     for test_file in os.listdir(directory):
         test_file_path = os.path.join(directory, test_file)
+        print(f"test_file_path = {test_file_path}")
         if test_file.endswith('.json'):
             task, _ = os.path.splitext(test_file)
             json_data = open(test_file_path, "r").read()
@@ -42,12 +43,12 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
         summary += "Average score: Not available due to errors"
 
     # Generate final table
-    final_table = make_final_table(result_dict, model_name)
+    final_table = make_final_table(result_dict, model_name, benchmark)
     summary = final_table + "\n" + summary
 
     # Read elapsed time from json
     
-    return summary
+    return final_table, summary
 
     # Tasks
     # if BENCHMARK == "openllm":
@@ -61,7 +62,7 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     #         f"The benchmark {BENCHMARK} could not be found."
     #     )
 
-def make_final_table(result_dict, model_name):
+def make_final_table(result_dict, model_name, benchmark):
     """Generate table of results with model name.
 
     Args:
@@ -73,10 +74,10 @@ def make_final_table(result_dict, model_name):
     """
     md_writer = MarkdownTableWriter()
     # Add 'Model' as the first header and then the rest from the dictionary keys
-    md_writer.headers = ["Model"] + list(result_dict.keys())
+    md_writer.headers = ["Benchmark"] + ["Model"] + list(result_dict.keys())
 
     # The values in the table will be the model name and then the values from the dictionary
-    values = [
+    values = [ benchmark,
         f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})"
     ] + list(result_dict.values())
 
@@ -105,7 +106,7 @@ def get_mcg(data):
 
 def calculate_average(data, task, bench):
     task = task.lower()
-    print(data)
+    # print(data)
 
     if bench == "openllm":
         if task == "arc":
@@ -249,30 +250,38 @@ def upload_to_github_gist(text, gist_name, gh_token):
     }
 
     # Make the request
-    response = requests.post(
-        "https://api.github.com/gists", headers=headers, json=gist_content
-    )
-
-    if response.status_code == 201:
-        print(f"Uploaded gist successfully! URL: {response.json()['html_url']}")
-    else:
-        print(
-            f"Failed to upload gist. Status code: {response.status_code}. Response: {response.text}"
+    try:
+        response = requests.post(
+            "https://api.github.com/gists", headers=headers, json=gist_content
         )
 
-def main(directory: str, model_name: str) -> str:
+        if response.status_code == 201:
+            print(f"Uploaded gist successfully! URL: {response.json()['html_url']}")
+        else:
+            print(
+                f"Failed to upload gist. Status code: {response.status_code}. Response: {response.text}"
+            )
+    except Exception:
+        print(f"Exception")
+
+def main(directory: str, model_name: str) -> tuple[str, str]:
     # model_name = os.path.basename(directory)
     print(f"model name = {model_name}")
+    all_summary = f"# {model_name} results\n\n"
+    all_final_table = ""
     for benchmark in os.listdir(directory):
         benchmark_path = os.path.join(directory, benchmark)
+        print(f"benchmark_path = {benchmark_path}")
         if os.path.isdir(benchmark_path):
             # Tasks
-            summary = _make_summary(directory=benchmark_path, model_name=model_name, benchmark=benchmark)
+            final_table, summary = _make_summary(directory=benchmark_path, model_name=model_name, benchmark=benchmark)
             metadata_path = os.path.join(directory, f"summary_{benchmark}.json")
             json_data = open(metadata_path, "r").read()
             data = json.loads(json_data, strict=False)
-            summary += f"\n\nMetadata: {data}"
-            return summary
+            summary += f"\n\nMetadata: {data}\n\n"
+            all_summary += f"## {benchmark} results \n\n {summary}"
+            all_final_table += f"{final_table}\n\n"
+    return all_final_table, all_summary
 
             # upload_to_github_gist(
             #     summary,
@@ -300,13 +309,23 @@ if __name__ == "__main__":
         raise ValueError(f"The directory {args.directory} does not exist.")
 
     # Call the main function with the directory argument
-    summary = f"# Model Eval results\n\n"
+    # summary = ""
+    readme = f"# Model Eval results\n\n"
     for user_name in os.listdir(args.directory):
+        # Skip directories starting with a dot
+        if user_name.startswith('.'):
+            continue
         username_path = os.path.join(args.directory, user_name)
         if os.path.isdir(username_path):
             for model_name in os.listdir(username_path):
                 model_path = os.path.join(username_path, model_name)
                 print(model_path)
                 if os.path.isdir(model_path):
-                    summary += main(model_path, f"{user_name}/{model_name}")
-    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", "README.md", summary, "Update Readme")        
+                    final_table, details = main(model_path, f"{user_name}/{model_name}")
+                    readme += f"## {model_name} results\n\n"
+                    readme += final_table
+                    readme += f"\nFor detailed results see [here]({user_name}/{model_name}/README.md)\n\n"
+                    summary = details
+                    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
+    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", "README.md", readme, "Update Readme")
+
