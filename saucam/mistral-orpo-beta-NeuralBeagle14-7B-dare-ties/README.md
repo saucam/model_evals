@@ -1,4 +1,6 @@
-### openllm results 
+# saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties results
+
+## openllm results 
 
  |Benchmark|                                                           Model                                                            |winogrande| arc |gsm8k|truthfulqa|hellaswag|Average|
 |---------|----------------------------------------------------------------------------------------------------------------------------|---------:|----:|----:|---------:|--------:|------:|
