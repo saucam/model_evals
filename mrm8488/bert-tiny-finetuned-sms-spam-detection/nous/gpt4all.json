@@ -1,0 +1,62 @@
+{
+  "results": {
+    "arc_challenge": {
+      "acc": 0.22184300341296928,
+      "acc_stderr": 0.012141659068147886,
+      "acc_norm": 0.25853242320819114,
+      "acc_norm_stderr": 0.01279455375428867
+    },
+    "arc_easy": {
+      "acc": 0.25084175084175087,
+      "acc_stderr": 0.008895183010487388,
+      "acc_norm": 0.24031986531986532,
+      "acc_norm_stderr": 0.008767553284156914
+    },
+    "boolq": {
+      "acc": 0.4785932721712538,
+      "acc_stderr": 0.008737036492417081
+    },
+    "hellaswag": {
+      "acc": 0.25692093208524197,
+      "acc_stderr": 0.004360424536145121,
+      "acc_norm": 0.26309500099581756,
+      "acc_norm_stderr": 0.004394136724173013
+    },
+    "openbookqa": {
+      "acc": 0.174,
+      "acc_stderr": 0.016971271257516147,
+      "acc_norm": 0.296,
+      "acc_norm_stderr": 0.020435342091896135
+    },
+    "piqa": {
+      "acc": 0.5212187159956474,
+      "acc_stderr": 0.011655314732288861,
+      "acc_norm": 0.4940152339499456,
+      "acc_norm_stderr": 0.011664988455853323
+    },
+    "winogrande": {
+      "acc": 0.4940805051302289,
+      "acc_stderr": 0.014051500838485807
+    }
+  },
+  "versions": {
+    "arc_challenge": 0,
+    "arc_easy": 0,
+    "boolq": 1,
+    "hellaswag": 0,
+    "openbookqa": 0,
+    "piqa": 0,
+    "winogrande": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=mrm8488/bert-tiny-finetuned-sms-spam-detection,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

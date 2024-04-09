@@ -1,0 +1,109 @@
+{
+  "results": {
+    "bigbench_causal_judgement": {
+      "multiple_choice_grade": 0.4789473684210526,
+      "multiple_choice_grade_stderr": 0.03633739504773335
+    },
+    "bigbench_date_understanding": {
+      "multiple_choice_grade": 0.0948509485094851,
+      "multiple_choice_grade_stderr": 0.015274147495987234
+    },
+    "bigbench_disambiguation_qa": {
+      "multiple_choice_grade": 0.3023255813953488,
+      "multiple_choice_grade_stderr": 0.02864819646025457
+    },
+    "bigbench_geometric_shapes": {
+      "multiple_choice_grade": 0.10027855153203342,
+      "multiple_choice_grade_stderr": 0.01587510292358051,
+      "exact_str_match": 0.0,
+      "exact_str_match_stderr": 0.0
+    },
+    "bigbench_logical_deduction_five_objects": {
+      "multiple_choice_grade": 0.196,
+      "multiple_choice_grade_stderr": 0.01777075122774486
+    },
+    "bigbench_logical_deduction_seven_objects": {
+      "multiple_choice_grade": 0.1457142857142857,
+      "multiple_choice_grade_stderr": 0.013344860860187662
+    },
+    "bigbench_logical_deduction_three_objects": {
+      "multiple_choice_grade": 0.33666666666666667,
+      "multiple_choice_grade_stderr": 0.02732941756218686
+    },
+    "bigbench_movie_recommendation": {
+      "multiple_choice_grade": 0.278,
+      "multiple_choice_grade_stderr": 0.0200558338880709
+    },
+    "bigbench_navigate": {
+      "multiple_choice_grade": 0.489,
+      "multiple_choice_grade_stderr": 0.015815471195292693
+    },
+    "bigbench_reasoning_about_colored_objects": {
+      "multiple_choice_grade": 0.1345,
+      "multiple_choice_grade_stderr": 0.007631119969964948
+    },
+    "bigbench_ruin_names": {
+      "multiple_choice_grade": 0.5424107142857143,
+      "multiple_choice_grade_stderr": 0.023563960809339948
+    },
+    "bigbench_salient_translation_error_detection": {
+      "multiple_choice_grade": 0.1683366733466934,
+      "multiple_choice_grade_stderr": 0.011849924044179259
+    },
+    "bigbench_snarks": {
+      "multiple_choice_grade": 0.4585635359116022,
+      "multiple_choice_grade_stderr": 0.03713960295993207
+    },
+    "bigbench_sports_understanding": {
+      "multiple_choice_grade": 0.4969574036511156,
+      "multiple_choice_grade_stderr": 0.015931029729145698
+    },
+    "bigbench_temporal_sequences": {
+      "multiple_choice_grade": 0.271,
+      "multiple_choice_grade_stderr": 0.014062601350986186
+    },
+    "bigbench_tracking_shuffled_objects_five_objects": {
+      "multiple_choice_grade": 0.2016,
+      "multiple_choice_grade_stderr": 0.011352050353913679
+    },
+    "bigbench_tracking_shuffled_objects_seven_objects": {
+      "multiple_choice_grade": 0.14285714285714285,
+      "multiple_choice_grade_stderr": 0.008367248752248833
+    },
+    "bigbench_tracking_shuffled_objects_three_objects": {
+      "multiple_choice_grade": 0.33666666666666667,
+      "multiple_choice_grade_stderr": 0.02732941756218686
+    }
+  },
+  "versions": {
+    "bigbench_causal_judgement": 0,
+    "bigbench_date_understanding": 0,
+    "bigbench_disambiguation_qa": 0,
+    "bigbench_geometric_shapes": 0,
+    "bigbench_logical_deduction_five_objects": 0,
+    "bigbench_logical_deduction_seven_objects": 0,
+    "bigbench_logical_deduction_three_objects": 0,
+    "bigbench_movie_recommendation": 0,
+    "bigbench_navigate": 0,
+    "bigbench_reasoning_about_colored_objects": 0,
+    "bigbench_ruin_names": 0,
+    "bigbench_salient_translation_error_detection": 0,
+    "bigbench_snarks": 0,
+    "bigbench_sports_understanding": 0,
+    "bigbench_temporal_sequences": 0,
+    "bigbench_tracking_shuffled_objects_five_objects": 0,
+    "bigbench_tracking_shuffled_objects_seven_objects": 0,
+    "bigbench_tracking_shuffled_objects_three_objects": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=mrm8488/bert-tiny-finetuned-sms-spam-detection,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
