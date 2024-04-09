@@ -1,4 +1,6 @@
-|Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
+### nous results 
+
+ |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
 |---------|---------------------------------------------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
 |nous     |[bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection)|  22.29|  34.67|   29.11|     48.11|  33.55|
 
