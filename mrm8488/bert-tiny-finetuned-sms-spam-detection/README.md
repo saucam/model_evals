@@ -1,4 +1,6 @@
-### nous results 
+# mrm8488/bert-tiny-finetuned-sms-spam-detection results
+
+## nous results 
 
  |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
 |---------|---------------------------------------------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
