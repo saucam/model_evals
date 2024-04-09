@@ -1,4 +1,6 @@
-|Benchmark|                                                           Model                                                            |winogrande| arc |gsm8k|truthfulqa|hellaswag|Average|
+### openllm results 
+
+ |Benchmark|                                                           Model                                                            |winogrande| arc |gsm8k|truthfulqa|hellaswag|Average|
 |---------|----------------------------------------------------------------------------------------------------------------------------|---------:|----:|----:|---------:|--------:|------:|
 |openllm  |[mistral-orpo-beta-NeuralBeagle14-7B-dare-ties](https://huggingface.co/saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties)|     81.14|67.32|61.79|     54.17|    85.89|  70.06|
 
