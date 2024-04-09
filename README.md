@@ -25,11 +25,16 @@ For detailed results see [here](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-
 
 For detailed results see [here](saucam/Nereus-7B/README.md)
 
+## nous results
+
+
+For detailed results see [here](bert-tiny-finetuned-sms-spam-detection/nous/README.md)
+
 ## bert-tiny-finetuned-sms-spam-detection results
 
 |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
 |---------|---------------------------------------------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
-|nous     |[bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection)|  22.29|  34.67|   29.11|     48.11|  33.55|
+|nous     |[bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection)|  22.95|  36.07|   28.75|     48.09|  33.97|
 
 
 
