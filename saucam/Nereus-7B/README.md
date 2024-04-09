@@ -1,4 +1,6 @@
-### nous results 
+# saucam/Nereus-7B results
+
+## nous results 
 
  |Benchmark|                       Model                        |agieval|gpt4all|bigbench|truthfulqa|Average|
 |---------|----------------------------------------------------|------:|------:|-------:|---------:|------:|
@@ -81,7 +83,7 @@ Average score: 52.12%
 
 Metadata: {'elapsed_time': '01:35:04'}
 
-### openllm results 
+## openllm results 
 
  |Benchmark|                       Model                        |winogrande| arc |gsm8k|mmlu|truthfulqa|hellaswag|Average|
 |---------|----------------------------------------------------|---------:|----:|----:|---:|---------:|--------:|------:|
