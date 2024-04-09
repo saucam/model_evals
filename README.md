@@ -25,11 +25,6 @@ For detailed results see [here](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-
 
 For detailed results see [here](saucam/Nereus-7B/README.md)
 
-## nous results
-
-
-For detailed results see [here](bert-tiny-finetuned-sms-spam-detection/nous/README.md)
-
 ## bert-tiny-finetuned-sms-spam-detection results
 
 |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
