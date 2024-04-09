@@ -81,5 +81,5 @@ Average: 48.09%
 
 Average score: 33.97%
 
-Metadata: {'elapsed_time': '01:35:04'}
+Metadata: {'elapsed_time': '02:32:24', 'gpu': 'NVIDIA GeForce RTX 4090'}
 
