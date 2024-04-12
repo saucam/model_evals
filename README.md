@@ -32,6 +32,11 @@ For detailed results see [here](saucam/Nereus-7B/README.md)
 |nous     |[Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it)|  37.23|  72.28|   38.72|     43.68|  47.98|
 
 
+|Benchmark|                                 Model                                  |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
+|---------|------------------------------------------------------------------------|---------:|----:|----:|----:|---------:|--------:|------:|
+|openllm  |[Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it)|     73.56|61.26|24.34|51.55|     43.68|    79.61|  55.67|
+
+
 
 For detailed results see [here](saucam/Orpomis-Prime-7B-it/README.md)
 
