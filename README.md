@@ -25,6 +25,21 @@ For detailed results see [here](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-
 
 For detailed results see [here](saucam/Nereus-7B/README.md)
 
+## Orpomis-Prime-7B results
+
+|Benchmark|                              Model                               |agieval|gpt4all|bigbench|truthfulqa|Average|
+|---------|------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
+|nous     |[Orpomis-Prime-7B](https://huggingface.co/saucam/Orpomis-Prime-7B)|   36.4|  72.18|    37.5|     41.02|  46.78|
+
+
+|Benchmark|                              Model                               |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
+|---------|------------------------------------------------------------------|---------:|----:|----:|----:|---------:|--------:|------:|
+|openllm  |[Orpomis-Prime-7B](https://huggingface.co/saucam/Orpomis-Prime-7B)|     73.95|60.67|24.41|52.43|     41.02|    79.12|  55.27|
+
+
+
+For detailed results see [here](saucam/Orpomis-Prime-7B/README.md)
+
 ## bert-tiny-finetuned-sms-spam-detection results
 
 |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
