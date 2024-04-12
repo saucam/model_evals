@@ -1,0 +1,109 @@
+{
+  "results": {
+    "bigbench_causal_judgement": {
+      "multiple_choice_grade": 0.5368421052631579,
+      "multiple_choice_grade_stderr": 0.036270781985214155
+    },
+    "bigbench_date_understanding": {
+      "multiple_choice_grade": 0.6775067750677507,
+      "multiple_choice_grade_stderr": 0.02436650324622915
+    },
+    "bigbench_disambiguation_qa": {
+      "multiple_choice_grade": 0.37209302325581395,
+      "multiple_choice_grade_stderr": 0.03015135653297936
+    },
+    "bigbench_geometric_shapes": {
+      "multiple_choice_grade": 0.20891364902506965,
+      "multiple_choice_grade_stderr": 0.02148591433329535,
+      "exact_str_match": 0.09749303621169916,
+      "exact_str_match_stderr": 0.015677274598353743
+    },
+    "bigbench_logical_deduction_five_objects": {
+      "multiple_choice_grade": 0.222,
+      "multiple_choice_grade_stderr": 0.01860441475825008
+    },
+    "bigbench_logical_deduction_seven_objects": {
+      "multiple_choice_grade": 0.14714285714285713,
+      "multiple_choice_grade_stderr": 0.013398900128600597
+    },
+    "bigbench_logical_deduction_three_objects": {
+      "multiple_choice_grade": 0.37666666666666665,
+      "multiple_choice_grade_stderr": 0.028022261151265607
+    },
+    "bigbench_movie_recommendation": {
+      "multiple_choice_grade": 0.34,
+      "multiple_choice_grade_stderr": 0.021206117013673066
+    },
+    "bigbench_navigate": {
+      "multiple_choice_grade": 0.508,
+      "multiple_choice_grade_stderr": 0.01581727492920901
+    },
+    "bigbench_reasoning_about_colored_objects": {
+      "multiple_choice_grade": 0.55,
+      "multiple_choice_grade_stderr": 0.011127079848413733
+    },
+    "bigbench_ruin_names": {
+      "multiple_choice_grade": 0.32589285714285715,
+      "multiple_choice_grade_stderr": 0.022169103134643414
+    },
+    "bigbench_salient_translation_error_detection": {
+      "multiple_choice_grade": 0.22344689378757515,
+      "multiple_choice_grade_stderr": 0.013192441053387457
+    },
+    "bigbench_snarks": {
+      "multiple_choice_grade": 0.569060773480663,
+      "multiple_choice_grade_stderr": 0.036910598415198746
+    },
+    "bigbench_sports_understanding": {
+      "multiple_choice_grade": 0.5020283975659229,
+      "multiple_choice_grade_stderr": 0.01593119360081057
+    },
+    "bigbench_temporal_sequences": {
+      "multiple_choice_grade": 0.44,
+      "multiple_choice_grade_stderr": 0.0157049879543618
+    },
+    "bigbench_tracking_shuffled_objects_five_objects": {
+      "multiple_choice_grade": 0.2304,
+      "multiple_choice_grade_stderr": 0.011914958875128149
+    },
+    "bigbench_tracking_shuffled_objects_seven_objects": {
+      "multiple_choice_grade": 0.14342857142857143,
+      "multiple_choice_grade_stderr": 0.008381171427194155
+    },
+    "bigbench_tracking_shuffled_objects_three_objects": {
+      "multiple_choice_grade": 0.37666666666666665,
+      "multiple_choice_grade_stderr": 0.028022261151265607
+    }
+  },
+  "versions": {
+    "bigbench_causal_judgement": 0,
+    "bigbench_date_understanding": 0,
+    "bigbench_disambiguation_qa": 0,
+    "bigbench_geometric_shapes": 0,
+    "bigbench_logical_deduction_five_objects": 0,
+    "bigbench_logical_deduction_seven_objects": 0,
+    "bigbench_logical_deduction_three_objects": 0,
+    "bigbench_movie_recommendation": 0,
+    "bigbench_navigate": 0,
+    "bigbench_reasoning_about_colored_objects": 0,
+    "bigbench_ruin_names": 0,
+    "bigbench_salient_translation_error_detection": 0,
+    "bigbench_snarks": 0,
+    "bigbench_sports_understanding": 0,
+    "bigbench_temporal_sequences": 0,
+    "bigbench_tracking_shuffled_objects_five_objects": 0,
+    "bigbench_tracking_shuffled_objects_seven_objects": 0,
+    "bigbench_tracking_shuffled_objects_three_objects": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
