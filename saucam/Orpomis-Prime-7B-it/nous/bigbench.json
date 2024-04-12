@@ -1,0 +1,109 @@
+{
+  "results": {
+    "bigbench_causal_judgement": {
+      "multiple_choice_grade": 0.5473684210526316,
+      "multiple_choice_grade_stderr": 0.03620607045823047
+    },
+    "bigbench_date_understanding": {
+      "multiple_choice_grade": 0.6747967479674797,
+      "multiple_choice_grade_stderr": 0.024419682952264415
+    },
+    "bigbench_disambiguation_qa": {
+      "multiple_choice_grade": 0.4186046511627907,
+      "multiple_choice_grade_stderr": 0.030773099399388278
+    },
+    "bigbench_geometric_shapes": {
+      "multiple_choice_grade": 0.22284122562674094,
+      "multiple_choice_grade_stderr": 0.02199435007363859,
+      "exact_str_match": 0.09749303621169916,
+      "exact_str_match_stderr": 0.015677274598353743
+    },
+    "bigbench_logical_deduction_five_objects": {
+      "multiple_choice_grade": 0.226,
+      "multiple_choice_grade_stderr": 0.018722956449139933
+    },
+    "bigbench_logical_deduction_seven_objects": {
+      "multiple_choice_grade": 0.15428571428571428,
+      "multiple_choice_grade_stderr": 0.013662686498814676
+    },
+    "bigbench_logical_deduction_three_objects": {
+      "multiple_choice_grade": 0.37,
+      "multiple_choice_grade_stderr": 0.027921294063982
+    },
+    "bigbench_movie_recommendation": {
+      "multiple_choice_grade": 0.344,
+      "multiple_choice_grade_stderr": 0.02126575803797874
+    },
+    "bigbench_navigate": {
+      "multiple_choice_grade": 0.5,
+      "multiple_choice_grade_stderr": 0.015819299929208316
+    },
+    "bigbench_reasoning_about_colored_objects": {
+      "multiple_choice_grade": 0.566,
+      "multiple_choice_grade_stderr": 0.01108528040785892
+    },
+    "bigbench_ruin_names": {
+      "multiple_choice_grade": 0.34151785714285715,
+      "multiple_choice_grade_stderr": 0.022429776589214547
+    },
+    "bigbench_salient_translation_error_detection": {
+      "multiple_choice_grade": 0.23146292585170342,
+      "multiple_choice_grade_stderr": 0.013357511337643554
+    },
+    "bigbench_snarks": {
+      "multiple_choice_grade": 0.6243093922651933,
+      "multiple_choice_grade_stderr": 0.03609764342836575
+    },
+    "bigbench_sports_understanding": {
+      "multiple_choice_grade": 0.552738336713996,
+      "multiple_choice_grade_stderr": 0.01584245622141825
+    },
+    "bigbench_temporal_sequences": {
+      "multiple_choice_grade": 0.452,
+      "multiple_choice_grade_stderr": 0.015746235865880677
+    },
+    "bigbench_tracking_shuffled_objects_five_objects": {
+      "multiple_choice_grade": 0.2288,
+      "multiple_choice_grade_stderr": 0.01188585153758106
+    },
+    "bigbench_tracking_shuffled_objects_seven_objects": {
+      "multiple_choice_grade": 0.14514285714285713,
+      "multiple_choice_grade_stderr": 0.00842266837615988
+    },
+    "bigbench_tracking_shuffled_objects_three_objects": {
+      "multiple_choice_grade": 0.37,
+      "multiple_choice_grade_stderr": 0.027921294063982
+    }
+  },
+  "versions": {
+    "bigbench_causal_judgement": 0,
+    "bigbench_date_understanding": 0,
+    "bigbench_disambiguation_qa": 0,
+    "bigbench_geometric_shapes": 0,
+    "bigbench_logical_deduction_five_objects": 0,
+    "bigbench_logical_deduction_seven_objects": 0,
+    "bigbench_logical_deduction_three_objects": 0,
+    "bigbench_movie_recommendation": 0,
+    "bigbench_navigate": 0,
+    "bigbench_reasoning_about_colored_objects": 0,
+    "bigbench_ruin_names": 0,
+    "bigbench_salient_translation_error_detection": 0,
+    "bigbench_snarks": 0,
+    "bigbench_sports_understanding": 0,
+    "bigbench_temporal_sequences": 0,
+    "bigbench_tracking_shuffled_objects_five_objects": 0,
+    "bigbench_tracking_shuffled_objects_seven_objects": 0,
+    "bigbench_tracking_shuffled_objects_three_objects": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B-it,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

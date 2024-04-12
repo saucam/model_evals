@@ -1,0 +1,24 @@
+{
+  "results": {
+    "truthfulqa_mc": {
+      "mc1": 0.2962056303549572,
+      "mc1_stderr": 0.015983595101811392,
+      "mc2": 0.43684875444979837,
+      "mc2_stderr": 0.014872957007715204
+    }
+  },
+  "versions": {
+    "truthfulqa_mc": 1
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B-it,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
