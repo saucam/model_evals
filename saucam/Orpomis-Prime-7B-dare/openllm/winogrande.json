@@ -1,0 +1,66 @@
+{
+  "results": {
+    "winogrande": {
+      "acc,none": 0.7876874506708761,
+      "acc_stderr,none": 0.011493384687249777,
+      "alias": "winogrande"
+    }
+  },
+  "group_subtasks": {
+    "winogrande": []
+  },
+  "configs": {
+    "winogrande": {
+      "task": "winogrande",
+      "dataset_path": "winogrande",
+      "dataset_name": "winogrande_xl",
+      "training_split": "train",
+      "validation_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    answer_to_num = {\"1\": 0, \"2\": 1}\n    return answer_to_num[doc[\"answer\"]]\n",
+      "doc_to_target": "def doc_to_target(doc):\n    idx = doc[\"sentence\"].index(\"_\") + 1\n    return doc[\"sentence\"][idx:].strip()\n",
+      "doc_to_choice": "def doc_to_choice(doc):\n    idx = doc[\"sentence\"].index(\"_\")\n    options = [doc[\"option1\"], doc[\"option2\"]]\n    return [doc[\"sentence\"][:idx] + opt for opt in options]\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 5,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "sentence",
+      "metadata": {
+        "version": 1.0
+      }
+    }
+  },
+  "versions": {
+    "winogrande": 1.0
+  },
+  "n-shot": {
+    "winogrande": 5
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B-dare,dtype=auto,trust_remote_code=False",
+    "batch_size": "auto",
+    "batch_sizes": [
+      64
+    ],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null
+  },
+  "git_hash": "7852985b",
+  "date": 1712955483.1413248,
+  "pretty_env_info": "PyTorch version: 2.2.0+cu121\nIs debug build: False\nCUDA used to build PyTorch: 12.1\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 22.04.3 LTS (x86_64)\nGCC version: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.35\n\nPython version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] (64-bit runtime)\nPython platform: Linux-5.4.0-121-generic-x86_64-with-glibc2.35\nIs CUDA available: True\nCUDA runtime version: 12.1.105\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: GPU 0: NVIDIA A100 80GB PCIe\nNvidia driver version: 545.23.08\ncuDNN version: Could not collect\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                    x86_64\nCPU op-mode(s):                  32-bit, 64-bit\nAddress sizes:                   48 bits physical, 48 bits virtual\nByte Order:                      Little Endian\nCPU(s):                          100\nOn-line CPU(s) list:             0-99\nVendor ID:                       AuthenticAMD\nModel name:                      AMD EPYC-Rome Processor\nCPU family:                      23\nModel:                           49\nThread(s) per core:              1\nCore(s) per socket:              1\nSocket(s):                       100\nStepping:                        0\nBogoMIPS:                        4499.62\nFlags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl cpuid extd_apicid pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr wbnoinvd arat umip rdpid arch_capabilities\nL1d cache:                       3.1 MiB (100 instances)\nL1i cache:                       3.1 MiB (100 instances)\nL2 cache:                        50 MiB (100 instances)\nL3 cache:                        1.6 GiB (100 instances)\nNUMA node(s):                    1\nNUMA node0 CPU(s):               0-99\nVulnerability Itlb multihit:     Not affected\nVulnerability L1tf:              Not affected\nVulnerability Mds:               Not affected\nVulnerability Meltdown:          Not affected\nVulnerability Mmio stale data:   Not affected\nVulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:        Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP disabled, RSB filling\nVulnerability Srbds:             Not affected\nVulnerability Tsx async abort:   Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==1.26.3\n[pip3] torch==2.2.0\n[pip3] torchaudio==2.2.0\n[pip3] torchvision==0.17.0\n[pip3] triton==2.2.0\n[conda] Could not collect",
+  "transformers_version": "4.39.3",
+  "upper_git_hash": null
+}
