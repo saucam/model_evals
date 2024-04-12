@@ -1,0 +1,62 @@
+{
+  "results": {
+    "arc_challenge": {
+      "acc": 0.5708191126279863,
+      "acc_stderr": 0.014464085894870653,
+      "acc_norm": 0.6015358361774744,
+      "acc_norm_stderr": 0.014306946052735567
+    },
+    "arc_easy": {
+      "acc": 0.8308080808080808,
+      "acc_stderr": 0.007693223639488826,
+      "acc_norm": 0.8265993265993266,
+      "acc_norm_stderr": 0.007768570412816704
+    },
+    "boolq": {
+      "acc": 0.8691131498470948,
+      "acc_stderr": 0.005899004240363429
+    },
+    "hellaswag": {
+      "acc": 0.6394144592710616,
+      "acc_stderr": 0.004791890625834189,
+      "acc_norm": 0.8283210515833499,
+      "acc_norm_stderr": 0.0037633047460987443
+    },
+    "openbookqa": {
+      "acc": 0.33,
+      "acc_stderr": 0.0210496121661348,
+      "acc_norm": 0.434,
+      "acc_norm_stderr": 0.02218721580302901
+    },
+    "piqa": {
+      "acc": 0.8150163220892275,
+      "acc_stderr": 0.009059313316508652,
+      "acc_norm": 0.8318824809575626,
+      "acc_norm_stderr": 0.008725350811241681
+    },
+    "winogrande": {
+      "acc": 0.7482241515390686,
+      "acc_stderr": 0.012198489100259769
+    }
+  },
+  "versions": {
+    "arc_challenge": 0,
+    "arc_easy": 0,
+    "boolq": 1,
+    "hellaswag": 0,
+    "openbookqa": 0,
+    "piqa": 0,
+    "winogrande": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B-dare,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

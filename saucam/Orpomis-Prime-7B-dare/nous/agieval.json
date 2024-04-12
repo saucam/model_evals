@@ -1,0 +1,73 @@
+{
+  "results": {
+    "agieval_aqua_rat": {
+      "acc": 0.22440944881889763,
+      "acc_stderr": 0.026228687798575883,
+      "acc_norm": 0.2283464566929134,
+      "acc_norm_stderr": 0.02639052653782214
+    },
+    "agieval_logiqa_en": {
+      "acc": 0.36098310291858676,
+      "acc_stderr": 0.018838352954538683,
+      "acc_norm": 0.37327188940092165,
+      "acc_norm_stderr": 0.01897123271547206
+    },
+    "agieval_lsat_ar": {
+      "acc": 0.22608695652173913,
+      "acc_stderr": 0.02764178570724133,
+      "acc_norm": 0.23043478260869565,
+      "acc_norm_stderr": 0.027827807522276156
+    },
+    "agieval_lsat_lr": {
+      "acc": 0.4764705882352941,
+      "acc_stderr": 0.022137557397076516,
+      "acc_norm": 0.48627450980392156,
+      "acc_norm_stderr": 0.022153758586005032
+    },
+    "agieval_lsat_rc": {
+      "acc": 0.5799256505576208,
+      "acc_stderr": 0.030149620080212002,
+      "acc_norm": 0.550185873605948,
+      "acc_norm_stderr": 0.030388122316939676
+    },
+    "agieval_sat_en": {
+      "acc": 0.7184466019417476,
+      "acc_stderr": 0.03141236994965782,
+      "acc_norm": 0.7087378640776699,
+      "acc_norm_stderr": 0.031732764025283834
+    },
+    "agieval_sat_en_without_passage": {
+      "acc": 0.49029126213592233,
+      "acc_stderr": 0.034914930792419537,
+      "acc_norm": 0.47572815533980584,
+      "acc_norm_stderr": 0.03488034442356186
+    },
+    "agieval_sat_math": {
+      "acc": 0.37727272727272726,
+      "acc_stderr": 0.03275326443550797,
+      "acc_norm": 0.36363636363636365,
+      "acc_norm_stderr": 0.03250605554246891
+    }
+  },
+  "versions": {
+    "agieval_aqua_rat": 0,
+    "agieval_logiqa_en": 0,
+    "agieval_lsat_ar": 0,
+    "agieval_lsat_lr": 0,
+    "agieval_lsat_rc": 0,
+    "agieval_sat_en": 0,
+    "agieval_sat_en_without_passage": 0,
+    "agieval_sat_math": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Orpomis-Prime-7B-dare,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
