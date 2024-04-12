@@ -25,6 +25,16 @@ For detailed results see [here](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-
 
 For detailed results see [here](saucam/Nereus-7B/README.md)
 
+## Orpomis-Prime-7B-it results
+
+|Benchmark|                                 Model                                  |agieval|gpt4all|bigbench|truthfulqa|Average|
+|---------|------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
+|nous     |[Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it)|  37.23|  72.28|   38.72|     43.68|  47.98|
+
+
+
+For detailed results see [here](saucam/Orpomis-Prime-7B-it/README.md)
+
 ## Orpomis-Prime-7B results
 
 |Benchmark|                              Model                               |agieval|gpt4all|bigbench|truthfulqa|Average|
