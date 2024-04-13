@@ -10,6 +10,21 @@
 
 For detailed results see [here](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties/README.md)
 
+## Orpomis-Prime-7B-dare results
+
+|Benchmark|                                   Model                                    |agieval|gpt4all|bigbench|truthfulqa|Average|
+|---------|----------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
+|nous     |[Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare)|  42.71|  73.42|   39.82|     53.72|  52.42|
+
+
+|Benchmark|                                   Model                                    |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
+|---------|----------------------------------------------------------------------------|---------:|----:|----:|----:|---------:|--------:|------:|
+|openllm  |[Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare)|     78.77|64.68|59.74|62.21|     53.72|    85.12|  67.37|
+
+
+
+For detailed results see [here](saucam/Orpomis-Prime-7B-dare/README.md)
+
 ## Nereus-7B results
 
 |Benchmark|                       Model                        |agieval|gpt4all|bigbench|truthfulqa|Average|
