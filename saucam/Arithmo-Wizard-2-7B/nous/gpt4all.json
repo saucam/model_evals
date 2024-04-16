@@ -1,0 +1,62 @@
+{
+  "results": {
+    "arc_challenge": {
+      "acc": 0.46245733788395904,
+      "acc_stderr": 0.014570144495075581,
+      "acc_norm": 0.4948805460750853,
+      "acc_norm_stderr": 0.014610624890309157
+    },
+    "arc_easy": {
+      "acc": 0.7777777777777778,
+      "acc_stderr": 0.0085307988438879,
+      "acc_norm": 0.7672558922558923,
+      "acc_norm_stderr": 0.0086711691205793
+    },
+    "boolq": {
+      "acc": 0.8513761467889909,
+      "acc_stderr": 0.006221534835349684
+    },
+    "hellaswag": {
+      "acc": 0.6207926707827126,
+      "acc_stderr": 0.0048419819735152836,
+      "acc_norm": 0.8093009360685123,
+      "acc_norm_stderr": 0.003920494224883793
+    },
+    "openbookqa": {
+      "acc": 0.326,
+      "acc_stderr": 0.020984009562393564,
+      "acc_norm": 0.436,
+      "acc_norm_stderr": 0.0221989546414768
+    },
+    "piqa": {
+      "acc": 0.8030467899891186,
+      "acc_stderr": 0.00927891889800638,
+      "acc_norm": 0.8161044613710555,
+      "acc_norm_stderr": 0.009038656758892257
+    },
+    "winogrande": {
+      "acc": 0.7387529597474349,
+      "acc_stderr": 0.012346914863415305
+    }
+  },
+  "versions": {
+    "arc_challenge": 0,
+    "arc_easy": 0,
+    "boolq": 1,
+    "hellaswag": 0,
+    "openbookqa": 0,
+    "piqa": 0,
+    "winogrande": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/Arithmo-Wizard-2-7B,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
