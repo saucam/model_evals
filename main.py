@@ -7,6 +7,8 @@ import math
 import os
 import requests
 import base64
+import json
+from collections import defaultdict
 
 from pytablewriter import MarkdownTableWriter
 
@@ -44,11 +46,12 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
 
     # Generate final table
     final_table = make_final_table(result_dict, model_name, benchmark)
+    final_table_json = make_final_table_json(result_dict, model_name, benchmark)
     summary = final_table + "\n" + summary
 
     # Read elapsed time from json
     
-    return final_table, summary
+    return final_table_json, summary
 
     # Tasks
     # if BENCHMARK == "openllm":
@@ -86,6 +89,23 @@ def make_final_table(result_dict, model_name, benchmark):
 
     # Return the table as a markdown formatted string
     return md_writer.dumps()
+
+def make_final_table_json(result_dict, model_name, benchmark):
+    """Generate table of results with model name.
+
+    Args:
+    result_dict (dict): A dictionary where keys are headers and values are the values in the table.
+    model_name (str): The name of the model to be included in the table.
+
+    Returns:
+    str: A json representing the results.
+    """
+    json_dict = result_dict.copy()
+    json_dict["Benchmark"] = benchmark
+    json_dict["Model"] = f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})"
+    json_dict["ModelName"] = model_name
+    j = json.dumps(json_dict)
+    return j
 
 def get_acc_norm(data):
     accs = [
@@ -268,19 +288,20 @@ def main(directory: str, model_name: str) -> tuple[str, str]:
     # model_name = os.path.basename(directory)
     print(f"model name = {model_name}")
     all_summary = f"# {model_name} results\n\n"
-    all_final_table = ""
+    all_final_table = []
     for benchmark in os.listdir(directory):
         benchmark_path = os.path.join(directory, benchmark)
         print(f"benchmark_path = {benchmark_path}")
         if os.path.isdir(benchmark_path):
             # Tasks
-            final_table, summary = _make_summary(directory=benchmark_path, model_name=model_name, benchmark=benchmark)
+            final_table_json, summary = _make_summary(directory=benchmark_path, model_name=model_name, benchmark=benchmark)
             metadata_path = os.path.join(directory, f"summary_{benchmark}.json")
             json_data = open(metadata_path, "r").read()
             data = json.loads(json_data, strict=False)
             summary += f"\n\nMetadata: {data}\n\n"
             all_summary += f"## {benchmark} results \n\n {summary}"
-            all_final_table += f"{final_table}\n\n"
+            all_final_table.append(final_table_json)
+            # all_final_table += f"{final_table}\n\n"
     return all_final_table, all_summary
 
             # upload_to_github_gist(
@@ -288,6 +309,36 @@ def main(directory: str, model_name: str) -> tuple[str, str]:
             #     f"{model_name}-{benchmark.capitalize()}.md",
             #     GITHUB_API_TOKEN,
             # )
+
+def group_and_generate_tables(json_data):
+    # Parse JSON data and group by benchmark
+    data_by_benchmark = defaultdict(list)
+    for item in json_data:
+        entry = json.loads(item)
+        data_by_benchmark[entry['Benchmark']].append(entry)
+    
+    markdown_tables = {}
+    
+    # Process each benchmark group
+    for benchmark, entries in data_by_benchmark.items():
+        # Sort entries by model name
+        entries.sort(key=lambda x: x['Model'])
+        
+        # Extract headers from sorted entries
+        headers = sorted({key for entry in entries for key in entry.keys() if key not in ['Benchmark', 'Model', 'ModelName']})
+        headers = ['Model', 'Details'] + headers  # Adding 'Model' as the first column
+        
+        # Create Markdown table
+        table = "| " + " | ".join(headers) + " |\n"
+        table += "|---" * len(headers) + "|\n"
+        
+        for entry in entries:
+            row = [entry.get("Model"), f"[complete result]({entry.get('ModelName')}/README.md)"] + [str(entry.get(h, '')) for h in headers[2:]]
+            table += "| " + " | ".join(row) + " |\n"
+        
+        markdown_tables[benchmark] = table
+    
+    return markdown_tables
 
 if __name__ == "__main__":
     # Create the parser
@@ -310,7 +361,8 @@ if __name__ == "__main__":
 
     # Call the main function with the directory argument
     # summary = ""
-    readme = f"# Model Eval results\n\n"
+    readme = f"# Model Eval results"
+    results_summary = []
     for user_name in os.listdir(args.directory):
         # Skip directories starting with a dot
         if user_name.startswith('.'):
@@ -322,10 +374,16 @@ if __name__ == "__main__":
                 print(model_path)
                 if os.path.isdir(model_path):
                     final_table, details = main(model_path, f"{user_name}/{model_name}")
-                    readme += f"## {model_name} results\n\n"
-                    readme += final_table
-                    readme += f"\nFor detailed results see [here]({user_name}/{model_name}/README.md)\n\n"
+                    # readme += f"## {model_name} results\n\n"
+                    # readme += final_table
+                    # readme += f"\nFor detailed results see [here]({user_name}/{model_name}/README.md)\n\n"
+                    for r in final_table:
+                        results_summary.append(r)
                     summary = details
-                    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
+                    # upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
+    tables = group_and_generate_tables(results_summary)
+    for benchmark, table in tables.items():
+        readme += f"\n\n### {benchmark} Benchmark results\n\n"
+        readme += table
     upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", "README.md", readme, "Update Readme")
 
