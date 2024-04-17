@@ -4,6 +4,7 @@
 
 | Model | Details | Average | arc | gsm8k | hellaswag | mmlu | truthfulqa | winogrande |
 |---|---|---|---|---|---|---|---|---|
+| [Arithmo-Wizard-2-7B](https://huggingface.co/saucam/Arithmo-Wizard-2-7B) | [complete result](saucam/Arithmo-Wizard-2-7B/README.md) | 65.22 | 62.88 | 61.26 | 83.15 | 60.61 | 45.9 | 77.51 |
 | [Nereus-7B](https://huggingface.co/saucam/Nereus-7B) | [complete result](saucam/Nereus-7B/README.md) | 63.82 | 62.54 | 46.25 | 83.23 | 59.6 | 54.32 | 76.95 |
 | [Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare) | [complete result](saucam/Orpomis-Prime-7B-dare/README.md) | 67.37 | 64.68 | 59.74 | 85.12 | 62.21 | 53.72 | 78.77 |
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 55.67 | 61.26 | 24.34 | 79.61 | 51.55 | 43.68 | 73.56 |
@@ -15,6 +16,7 @@
 
 | Model | Details | Average | agieval | bigbench | gpt4all | truthfulqa |
 |---|---|---|---|---|---|---|
+| [Arithmo-Wizard-2-7B](https://huggingface.co/saucam/Arithmo-Wizard-2-7B) | [complete result](saucam/Arithmo-Wizard-2-7B/README.md) | 46.28 | 31.58 | 37.44 | 70.2 | 45.91 |
 | [Nereus-7B](https://huggingface.co/saucam/Nereus-7B) | [complete result](saucam/Nereus-7B/README.md) | 52.12 | 42.8 | 39.17 | 72.21 | 54.32 |
 | [Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare) | [complete result](saucam/Orpomis-Prime-7B-dare/README.md) | 52.42 | 42.71 | 39.82 | 73.42 | 53.72 |
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 47.98 | 37.23 | 38.72 | 72.28 | 43.68 |
