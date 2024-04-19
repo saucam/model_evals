@@ -6,6 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | [Arithmo-Wizard-2-7B](https://huggingface.co/saucam/Arithmo-Wizard-2-7B) | [complete result](saucam/Arithmo-Wizard-2-7B/README.md) | 65.22 | 62.88 | 61.26 | 83.15 | 60.61 | 45.9 | 77.51 |
 | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [complete result](meta-llama/Meta-Llama-3-8B-Instruct/README.md) | 68.27 | 62.2 | 75.59 | 78.84 | 65.82 | 51.71 | 75.45 |
+| [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B) | [complete result](meta-llama/Meta-Llama-3-8B/README.md) | 62.84 | 57.51 | 50.87 | 82.09 | 65.04 | 43.93 | 77.58 |
 | [Nereus-7B](https://huggingface.co/saucam/Nereus-7B) | [complete result](saucam/Nereus-7B/README.md) | 63.82 | 62.54 | 46.25 | 83.23 | 59.6 | 54.32 | 76.95 |
 | [Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare) | [complete result](saucam/Orpomis-Prime-7B-dare/README.md) | 67.37 | 64.68 | 59.74 | 85.12 | 62.21 | 53.72 | 78.77 |
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 55.67 | 61.26 | 24.34 | 79.61 | 51.55 | 43.68 | 73.56 |
