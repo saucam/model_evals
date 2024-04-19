@@ -380,7 +380,7 @@ if __name__ == "__main__":
                     for r in final_table:
                         results_summary.append(r)
                     summary = details
-                    # upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
+                    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
     tables = group_and_generate_tables(results_summary)
     for benchmark, table in tables.items():
         readme += f"\n\n### {benchmark} Benchmark results\n\n"
