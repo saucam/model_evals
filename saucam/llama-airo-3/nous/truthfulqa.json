@@ -1,0 +1,24 @@
+{
+  "results": {
+    "truthfulqa_mc": {
+      "mc1": 0.397796817625459,
+      "mc1_stderr": 0.01713393424855963,
+      "mc2": 0.5630378636410542,
+      "mc2_stderr": 0.015169659789406664
+    }
+  },
+  "versions": {
+    "truthfulqa_mc": 1
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/llama-airo-3,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

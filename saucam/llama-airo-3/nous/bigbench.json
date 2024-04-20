@@ -1,0 +1,109 @@
+{
+  "results": {
+    "bigbench_causal_judgement": {
+      "multiple_choice_grade": 0.5526315789473685,
+      "multiple_choice_grade_stderr": 0.03616759320717246
+    },
+    "bigbench_date_understanding": {
+      "multiple_choice_grade": 0.6693766937669376,
+      "multiple_choice_grade_stderr": 0.024523255134965723
+    },
+    "bigbench_disambiguation_qa": {
+      "multiple_choice_grade": 0.3449612403100775,
+      "multiple_choice_grade_stderr": 0.029651870039899175
+    },
+    "bigbench_geometric_shapes": {
+      "multiple_choice_grade": 0.2395543175487465,
+      "multiple_choice_grade_stderr": 0.02255768808806643,
+      "exact_str_match": 0.0,
+      "exact_str_match_stderr": 0.0
+    },
+    "bigbench_logical_deduction_five_objects": {
+      "multiple_choice_grade": 0.312,
+      "multiple_choice_grade_stderr": 0.02074059653648807
+    },
+    "bigbench_logical_deduction_seven_objects": {
+      "multiple_choice_grade": 0.22714285714285715,
+      "multiple_choice_grade_stderr": 0.015847492934853175
+    },
+    "bigbench_logical_deduction_three_objects": {
+      "multiple_choice_grade": 0.47,
+      "multiple_choice_grade_stderr": 0.02886365132641709
+    },
+    "bigbench_movie_recommendation": {
+      "multiple_choice_grade": 0.304,
+      "multiple_choice_grade_stderr": 0.020591649571224932
+    },
+    "bigbench_navigate": {
+      "multiple_choice_grade": 0.494,
+      "multiple_choice_grade_stderr": 0.015818160898606715
+    },
+    "bigbench_reasoning_about_colored_objects": {
+      "multiple_choice_grade": 0.6385,
+      "multiple_choice_grade_stderr": 0.010745538995515905
+    },
+    "bigbench_ruin_names": {
+      "multiple_choice_grade": 0.31919642857142855,
+      "multiple_choice_grade_stderr": 0.022048861164576057
+    },
+    "bigbench_salient_translation_error_detection": {
+      "multiple_choice_grade": 0.23647294589178355,
+      "multiple_choice_grade_stderr": 0.0134572204447777
+    },
+    "bigbench_snarks": {
+      "multiple_choice_grade": 0.5966850828729282,
+      "multiple_choice_grade_stderr": 0.03656440244811994
+    },
+    "bigbench_sports_understanding": {
+      "multiple_choice_grade": 0.5496957403651116,
+      "multiple_choice_grade_stderr": 0.015852439271366082
+    },
+    "bigbench_temporal_sequences": {
+      "multiple_choice_grade": 0.259,
+      "multiple_choice_grade_stderr": 0.013860415257527911
+    },
+    "bigbench_tracking_shuffled_objects_five_objects": {
+      "multiple_choice_grade": 0.2208,
+      "multiple_choice_grade_stderr": 0.011736613074868625
+    },
+    "bigbench_tracking_shuffled_objects_seven_objects": {
+      "multiple_choice_grade": 0.16285714285714287,
+      "multiple_choice_grade_stderr": 0.008828934378663708
+    },
+    "bigbench_tracking_shuffled_objects_three_objects": {
+      "multiple_choice_grade": 0.47,
+      "multiple_choice_grade_stderr": 0.02886365132641709
+    }
+  },
+  "versions": {
+    "bigbench_causal_judgement": 0,
+    "bigbench_date_understanding": 0,
+    "bigbench_disambiguation_qa": 0,
+    "bigbench_geometric_shapes": 0,
+    "bigbench_logical_deduction_five_objects": 0,
+    "bigbench_logical_deduction_seven_objects": 0,
+    "bigbench_logical_deduction_three_objects": 0,
+    "bigbench_movie_recommendation": 0,
+    "bigbench_navigate": 0,
+    "bigbench_reasoning_about_colored_objects": 0,
+    "bigbench_ruin_names": 0,
+    "bigbench_salient_translation_error_detection": 0,
+    "bigbench_snarks": 0,
+    "bigbench_sports_understanding": 0,
+    "bigbench_temporal_sequences": 0,
+    "bigbench_tracking_shuffled_objects_five_objects": 0,
+    "bigbench_tracking_shuffled_objects_seven_objects": 0,
+    "bigbench_tracking_shuffled_objects_three_objects": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/llama-airo-3,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "results": {
+    "arc_challenge": {
+      "acc": 0.5469283276450512,
+      "acc_stderr": 0.01454689205200563,
+      "acc_norm": 0.575938566552901,
+      "acc_norm_stderr": 0.0144418896274644
+    },
+    "arc_easy": {
+      "acc": 0.8371212121212122,
+      "acc_stderr": 0.007576953653586538,
+      "acc_norm": 0.8186026936026936,
+      "acc_norm_stderr": 0.00790715395280171
+    },
+    "boolq": {
+      "acc": 0.844954128440367,
+      "acc_stderr": 0.006330517434270745
+    },
+    "hellaswag": {
+      "acc": 0.6149173471420036,
+      "acc_stderr": 0.004856203374715454,
+      "acc_norm": 0.8057159928301135,
+      "acc_norm_stderr": 0.003948399013301677
+    },
+    "openbookqa": {
+      "acc": 0.35,
+      "acc_stderr": 0.021352091786223108,
+      "acc_norm": 0.46,
+      "acc_norm_stderr": 0.022311333245289663
+    },
+    "piqa": {
+      "acc": 0.8014145810663765,
+      "acc_stderr": 0.009307814521717871,
+      "acc_norm": 0.8101196953210011,
+      "acc_norm_stderr": 0.009150819250948716
+    },
+    "winogrande": {
+      "acc": 0.7411207576953434,
+      "acc_stderr": 0.012310515810993376
+    }
+  },
+  "versions": {
+    "arc_challenge": 0,
+    "arc_easy": 0,
+    "boolq": 1,
+    "hellaswag": 0,
+    "openbookqa": 0,
+    "piqa": 0,
+    "winogrande": 0
+  },
+  "config": {
+    "model": "hf-causal",
+    "model_args": "pretrained=saucam/llama-airo-3,trust_remote_code=False",
+    "num_fewshot": 0,
+    "batch_size": "auto",
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
