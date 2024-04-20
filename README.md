@@ -11,6 +11,7 @@
 | [Orpomis-Prime-7B-dare](https://huggingface.co/saucam/Orpomis-Prime-7B-dare) | [complete result](saucam/Orpomis-Prime-7B-dare/README.md) | 67.37 | 64.68 | 59.74 | 85.12 | 62.21 | 53.72 | 78.77 |
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 55.67 | 61.26 | 24.34 | 79.61 | 51.55 | 43.68 | 73.56 |
 | [Orpomis-Prime-7B](https://huggingface.co/saucam/Orpomis-Prime-7B) | [complete result](saucam/Orpomis-Prime-7B/README.md) | 55.27 | 60.67 | 24.41 | 79.12 | 52.43 | 41.02 | 73.95 |
+| [llama-airo-3](https://huggingface.co/saucam/llama-airo-3) | [complete result](saucam/llama-airo-3/README.md) | 66.52 | 61.01 | 56.33 | 82.42 | 64.79 | 56.35 | 78.22 |
 | [mera-mix-4x7B](https://huggingface.co/meraGPT/mera-mix-4x7B) | [complete result](meraGPT/mera-mix-4x7B/README.md) | 76.59 | 71.76 | 72.93 | 88.92 | 63.8 | 77.6 | 84.53 |
 | [mistral-orpo-beta-NeuralBeagle14-7B-dare-ties](https://huggingface.co/saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties) | [complete result](saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties/README.md) | 70.06 | 67.32 | 61.79 | 85.89 |  | 54.17 | 81.14 |
 
