@@ -1,5 +1,88 @@
 # saucam/llama-airo-3 results
 
+## nous results 
+
+ |Benchmark|                          Model                           |agieval|gpt4all|bigbench|truthfulqa|Average|
+|---------|----------------------------------------------------------|------:|------:|-------:|---------:|------:|
+|nous     |[llama-airo-3](https://huggingface.co/saucam/llama-airo-3)|  36.59|  72.24|   39.26|      56.3|   51.1|
+
+### agieval
+|             Task             |Version| Metric |Value|   |Stderr|
+|------------------------------|------:|--------|----:|---|-----:|
+|agieval_aqua_rat              |      0|acc     |24.80|±  |  2.72|
+|                              |       |acc_norm|25.98|±  |  2.76|
+|agieval_logiqa_en             |      0|acc     |31.03|±  |  1.81|
+|                              |       |acc_norm|33.64|±  |  1.85|
+|agieval_lsat_ar               |      0|acc     |18.26|±  |  2.55|
+|                              |       |acc_norm|16.96|±  |  2.48|
+|agieval_lsat_lr               |      0|acc     |36.27|±  |  2.13|
+|                              |       |acc_norm|35.29|±  |  2.12|
+|agieval_lsat_rc               |      0|acc     |51.67|±  |  3.05|
+|                              |       |acc_norm|47.58|±  |  3.05|
+|agieval_sat_en                |      0|acc     |67.48|±  |  3.27|
+|                              |       |acc_norm|58.25|±  |  3.44|
+|agieval_sat_en_without_passage|      0|acc     |41.75|±  |  3.44|
+|                              |       |acc_norm|35.92|±  |  3.35|
+|agieval_sat_math              |      0|acc     |44.55|±  |  3.36|
+|                              |       |acc_norm|39.09|±  |  3.30|
+
+Average: 36.59%
+
+### gpt4all
+|    Task     |Version| Metric |Value|   |Stderr|
+|-------------|------:|--------|----:|---|-----:|
+|arc_challenge|      0|acc     |54.69|±  |  1.45|
+|             |       |acc_norm|57.59|±  |  1.44|
+|arc_easy     |      0|acc     |83.71|±  |  0.76|
+|             |       |acc_norm|81.86|±  |  0.79|
+|boolq        |      1|acc     |84.50|±  |  0.63|
+|hellaswag    |      0|acc     |61.49|±  |  0.49|
+|             |       |acc_norm|80.57|±  |  0.39|
+|openbookqa   |      0|acc     |35.00|±  |  2.14|
+|             |       |acc_norm|46.00|±  |  2.23|
+|piqa         |      0|acc     |80.14|±  |  0.93|
+|             |       |acc_norm|81.01|±  |  0.92|
+|winogrande   |      0|acc     |74.11|±  |  1.23|
+
+Average: 72.24%
+
+### bigbench
+|                      Task                      |Version|       Metric        |Value|   |Stderr|
+|------------------------------------------------|------:|---------------------|----:|---|-----:|
+|bigbench_causal_judgement                       |      0|multiple_choice_grade|55.26|±  |  3.62|
+|bigbench_date_understanding                     |      0|multiple_choice_grade|66.94|±  |  2.45|
+|bigbench_disambiguation_qa                      |      0|multiple_choice_grade|34.50|±  |  2.97|
+|bigbench_geometric_shapes                       |      0|multiple_choice_grade|23.96|±  |  2.26|
+|                                                |       |exact_str_match      | 0.00|±  |  0.00|
+|bigbench_logical_deduction_five_objects         |      0|multiple_choice_grade|31.20|±  |  2.07|
+|bigbench_logical_deduction_seven_objects        |      0|multiple_choice_grade|22.71|±  |  1.58|
+|bigbench_logical_deduction_three_objects        |      0|multiple_choice_grade|47.00|±  |  2.89|
+|bigbench_movie_recommendation                   |      0|multiple_choice_grade|30.40|±  |  2.06|
+|bigbench_navigate                               |      0|multiple_choice_grade|49.40|±  |  1.58|
+|bigbench_reasoning_about_colored_objects        |      0|multiple_choice_grade|63.85|±  |  1.07|
+|bigbench_ruin_names                             |      0|multiple_choice_grade|31.92|±  |  2.20|
+|bigbench_salient_translation_error_detection    |      0|multiple_choice_grade|23.65|±  |  1.35|
+|bigbench_snarks                                 |      0|multiple_choice_grade|59.67|±  |  3.66|
+|bigbench_sports_understanding                   |      0|multiple_choice_grade|54.97|±  |  1.59|
+|bigbench_temporal_sequences                     |      0|multiple_choice_grade|25.90|±  |  1.39|
+|bigbench_tracking_shuffled_objects_five_objects |      0|multiple_choice_grade|22.08|±  |  1.17|
+|bigbench_tracking_shuffled_objects_seven_objects|      0|multiple_choice_grade|16.29|±  |  0.88|
+|bigbench_tracking_shuffled_objects_three_objects|      0|multiple_choice_grade|47.00|±  |  2.89|
+
+Average: 39.26%
+
+### truthfulqa
+|    Task     |Version|Metric|Value|   |Stderr|
+|-------------|------:|------|----:|---|-----:|
+|truthfulqa_mc|      1|mc1   |39.78|±  |  1.71|
+|             |       |mc2   |56.30|±  |  1.52|
+
+Average: 56.3%
+
+Average score: 51.1%
+
+Metadata: {'elapsed_time': '11:34:38', 'gpu': 'NVIDIA A100 80GB PCIe'}
+
 ## openllm results 
 
  |Benchmark|                          Model                           |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
