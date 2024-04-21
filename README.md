@@ -26,3 +26,4 @@
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 47.98 | 37.23 | 38.72 | 72.28 | 43.68 |
 | [Orpomis-Prime-7B](https://huggingface.co/saucam/Orpomis-Prime-7B) | [complete result](saucam/Orpomis-Prime-7B/README.md) | 46.78 | 36.4 | 37.5 | 72.18 | 41.02 |
 | [bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection) | [complete result](mrm8488/bert-tiny-finetuned-sms-spam-detection/README.md) | 33.97 | 22.95 | 28.75 | 36.07 | 48.09 |
+| [llama-airo-3](https://huggingface.co/saucam/llama-airo-3) | [complete result](saucam/llama-airo-3/README.md) | 51.1 | 36.59 | 39.26 | 72.24 | 56.3 |
