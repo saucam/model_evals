@@ -2,18 +2,20 @@
 
 ## openllm results 
 
- |Benchmark|                                                           Model                                                            |winogrande| arc |gsm8k|truthfulqa|hellaswag|Average|
-|---------|----------------------------------------------------------------------------------------------------------------------------|---------:|----:|----:|---------:|--------:|------:|
-|openllm  |[mistral-orpo-beta-NeuralBeagle14-7B-dare-ties](https://huggingface.co/saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties)|     81.14|67.32|61.79|     54.17|    85.89|  70.06|
+ |Benchmark|                                                           Model                                                            |gsm8k| arc |hellaswag|truthfulqa|winogrande|Average|
+|---------|----------------------------------------------------------------------------------------------------------------------------|----:|----:|--------:|---------:|---------:|------:|
+|openllm  |[mistral-orpo-beta-NeuralBeagle14-7B-dare-ties](https://huggingface.co/saucam/mistral-orpo-beta-NeuralBeagle14-7B-dare-ties)|61.79|67.32|    85.89|     54.17|     81.14|  70.06|
 
-### winogrande
-|   Task   |Version|    Metric     |  Value   |   |Stderr|
-|----------|------:|---------------|----------|---|------|
-|winogrande|      1|acc,none       |      0.81|   |      |
-|          |       |acc_stderr,none|      0.01|   |      |
-|          |       |alias          |winogrande|   |      |
+### gsm8k
+|Task |Version|              Metric               |Value|   |Stderr|
+|-----|------:|-----------------------------------|-----|---|------|
+|gsm8k|      3|exact_match,strict-match           | 0.62|   |      |
+|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
+|     |       |exact_match,flexible-extract       | 0.62|   |      |
+|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
+|     |       |alias                              |gsm8k|   |      |
 
-Average: 81.14%
+Average: 61.79%
 
 ### arc
 |    Task     |Version|       Metric       |    Value    |   |Stderr|
@@ -26,16 +28,16 @@ Average: 81.14%
 
 Average: 67.32%
 
-### gsm8k
-|Task |Version|              Metric               |Value|   |Stderr|
-|-----|------:|-----------------------------------|-----|---|------|
-|gsm8k|      3|exact_match,strict-match           | 0.62|   |      |
-|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
-|     |       |exact_match,flexible-extract       | 0.62|   |      |
-|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
-|     |       |alias                              |gsm8k|   |      |
+### hellaswag
+|  Task   |Version|       Metric       |  Value  |   |Stderr|
+|---------|------:|--------------------|---------|---|------|
+|hellaswag|      1|acc,none            |     0.67|   |      |
+|         |       |acc_stderr,none     |        0|   |      |
+|         |       |acc_norm,none       |     0.86|   |      |
+|         |       |acc_norm_stderr,none|        0|   |      |
+|         |       |alias               |hellaswag|   |      |
 
-Average: 61.79%
+Average: 85.89%
 
 ### truthfulqa
 |     Task     |Version|        Metric         |      Value      |   |Stderr|
@@ -101,16 +103,14 @@ Average: 61.79%
 
 Average: 54.17%
 
-### hellaswag
-|  Task   |Version|       Metric       |  Value  |   |Stderr|
-|---------|------:|--------------------|---------|---|------|
-|hellaswag|      1|acc,none            |     0.67|   |      |
-|         |       |acc_stderr,none     |        0|   |      |
-|         |       |acc_norm,none       |     0.86|   |      |
-|         |       |acc_norm_stderr,none|        0|   |      |
-|         |       |alias               |hellaswag|   |      |
+### winogrande
+|   Task   |Version|    Metric     |  Value   |   |Stderr|
+|----------|------:|---------------|----------|---|------|
+|winogrande|      1|acc,none       |      0.81|   |      |
+|          |       |acc_stderr,none|      0.01|   |      |
+|          |       |alias          |winogrande|   |      |
 
-Average: 85.89%
+Average: 81.14%
 
 Average score: 70.06%
 
