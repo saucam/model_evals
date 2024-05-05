@@ -2,9 +2,9 @@
 
 ## nous results 
 
- |Benchmark|                                                     Model                                                     |agieval|gpt4all|bigbench|truthfulqa|Average|
-|---------|---------------------------------------------------------------------------------------------------------------|------:|------:|-------:|---------:|------:|
-|nous     |[bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection)|  22.95|  36.07|   28.75|     48.09|  33.97|
+ |Benchmark|                                                     Model                                                     |agieval|bigbench|gpt4all|truthfulqa|Average|
+|---------|---------------------------------------------------------------------------------------------------------------|------:|-------:|------:|---------:|------:|
+|nous     |[bert-tiny-finetuned-sms-spam-detection](https://huggingface.co/mrm8488/bert-tiny-finetuned-sms-spam-detection)|  22.95|   28.75|  36.07|     48.09|  33.97|
 
 ### agieval
 |             Task             |Version| Metric |Value|   |Stderr|
@@ -27,24 +27,6 @@
 |                              |       |acc_norm|25.45|±  |  2.94|
 
 Average: 22.95%
-
-### gpt4all
-|    Task     |Version| Metric |Value|   |Stderr|
-|-------------|------:|--------|----:|---|-----:|
-|arc_challenge|      0|acc     |22.18|±  |  1.21|
-|             |       |acc_norm|25.85|±  |  1.28|
-|arc_easy     |      0|acc     |25.08|±  |  0.89|
-|             |       |acc_norm|24.03|±  |  0.88|
-|boolq        |      1|acc     |47.86|±  |  0.87|
-|hellaswag    |      0|acc     |25.69|±  |  0.44|
-|             |       |acc_norm|26.31|±  |  0.44|
-|openbookqa   |      0|acc     |17.40|±  |  1.70|
-|             |       |acc_norm|29.60|±  |  2.04|
-|piqa         |      0|acc     |52.12|±  |  1.17|
-|             |       |acc_norm|49.40|±  |  1.17|
-|winogrande   |      0|acc     |49.41|±  |  1.41|
-
-Average: 36.07%
 
 ### bigbench
 |                      Task                      |Version|       Metric        |Value|   |Stderr|
@@ -70,6 +52,24 @@ Average: 36.07%
 |bigbench_tracking_shuffled_objects_three_objects|      0|multiple_choice_grade|33.67|±  |  2.73|
 
 Average: 28.75%
+
+### gpt4all
+|    Task     |Version| Metric |Value|   |Stderr|
+|-------------|------:|--------|----:|---|-----:|
+|arc_challenge|      0|acc     |22.18|±  |  1.21|
+|             |       |acc_norm|25.85|±  |  1.28|
+|arc_easy     |      0|acc     |25.08|±  |  0.89|
+|             |       |acc_norm|24.03|±  |  0.88|
+|boolq        |      1|acc     |47.86|±  |  0.87|
+|hellaswag    |      0|acc     |25.69|±  |  0.44|
+|             |       |acc_norm|26.31|±  |  0.44|
+|openbookqa   |      0|acc     |17.40|±  |  1.70|
+|             |       |acc_norm|29.60|±  |  2.04|
+|piqa         |      0|acc     |52.12|±  |  1.17|
+|             |       |acc_norm|49.40|±  |  1.17|
+|winogrande   |      0|acc     |49.41|±  |  1.41|
+
+Average: 36.07%
 
 ### truthfulqa
 |    Task     |Version|Metric|Value|   |Stderr|
