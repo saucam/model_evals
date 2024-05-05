@@ -2,18 +2,20 @@
 
 ## openllm results 
 
- |Benchmark|                               Model                                |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
-|---------|--------------------------------------------------------------------|---------:|----:|----:|----:|---------:|--------:|------:|
-|openllm  |[Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)|     77.58|57.51|50.87|65.04|     43.93|    82.09|  62.84|
+ |Benchmark|                               Model                                |gsm8k| arc |hellaswag|mmlu |truthfulqa|winogrande|Average|
+|---------|--------------------------------------------------------------------|----:|----:|--------:|----:|---------:|---------:|------:|
+|openllm  |[Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)|50.87|57.51|    82.09|65.04|     43.93|     77.58|  62.84|
 
-### winogrande
-|   Task   |Version|    Metric     |  Value   |   |Stderr|
-|----------|------:|---------------|----------|---|------|
-|winogrande|      1|acc,none       |      0.78|   |      |
-|          |       |acc_stderr,none|      0.01|   |      |
-|          |       |alias          |winogrande|   |      |
+### gsm8k
+|Task |Version|              Metric               |Value|   |Stderr|
+|-----|------:|-----------------------------------|-----|---|------|
+|gsm8k|      3|exact_match,strict-match           | 0.51|   |      |
+|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
+|     |       |exact_match,flexible-extract       | 0.51|   |      |
+|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
+|     |       |alias                              |gsm8k|   |      |
 
-Average: 77.58%
+Average: 50.87%
 
 ### arc
 |    Task     |Version|       Metric       |    Value    |   |Stderr|
@@ -26,16 +28,16 @@ Average: 77.58%
 
 Average: 57.51%
 
-### gsm8k
-|Task |Version|              Metric               |Value|   |Stderr|
-|-----|------:|-----------------------------------|-----|---|------|
-|gsm8k|      3|exact_match,strict-match           | 0.51|   |      |
-|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
-|     |       |exact_match,flexible-extract       | 0.51|   |      |
-|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
-|     |       |alias                              |gsm8k|   |      |
+### hellaswag
+|  Task   |Version|       Metric       |  Value  |   |Stderr|
+|---------|------:|--------------------|---------|---|------|
+|hellaswag|      1|acc,none            |     0.62|   |      |
+|         |       |acc_stderr,none     |        0|   |      |
+|         |       |acc_norm,none       |     0.82|   |      |
+|         |       |acc_norm_stderr,none|        0|   |      |
+|         |       |alias               |hellaswag|   |      |
 
-Average: 50.87%
+Average: 82.09%
 
 ### mmlu
 |                  Task                  |Version|    Metric     |                 Value                 |   |Stderr|
@@ -293,16 +295,14 @@ Average: 65.04%
 
 Average: 43.93%
 
-### hellaswag
-|  Task   |Version|       Metric       |  Value  |   |Stderr|
-|---------|------:|--------------------|---------|---|------|
-|hellaswag|      1|acc,none            |     0.62|   |      |
-|         |       |acc_stderr,none     |        0|   |      |
-|         |       |acc_norm,none       |     0.82|   |      |
-|         |       |acc_norm_stderr,none|        0|   |      |
-|         |       |alias               |hellaswag|   |      |
+### winogrande
+|   Task   |Version|    Metric     |  Value   |   |Stderr|
+|----------|------:|---------------|----------|---|------|
+|winogrande|      1|acc,none       |      0.78|   |      |
+|          |       |acc_stderr,none|      0.01|   |      |
+|          |       |alias          |winogrande|   |      |
 
-Average: 82.09%
+Average: 77.58%
 
 Average score: 62.84%
 
