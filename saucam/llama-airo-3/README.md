@@ -2,9 +2,9 @@
 
 ## nous results 
 
- |Benchmark|                          Model                           |agieval|gpt4all|bigbench|truthfulqa|Average|
-|---------|----------------------------------------------------------|------:|------:|-------:|---------:|------:|
-|nous     |[llama-airo-3](https://huggingface.co/saucam/llama-airo-3)|  36.59|  72.24|   39.26|      56.3|   51.1|
+ |Benchmark|                          Model                           |agieval|bigbench|gpt4all|truthfulqa|Average|
+|---------|----------------------------------------------------------|------:|-------:|------:|---------:|------:|
+|nous     |[llama-airo-3](https://huggingface.co/saucam/llama-airo-3)|  36.59|   39.26|  72.24|      56.3|   51.1|
 
 ### agieval
 |             Task             |Version| Metric |Value|   |Stderr|
@@ -27,24 +27,6 @@
 |                              |       |acc_norm|39.09|±  |  3.30|
 
 Average: 36.59%
-
-### gpt4all
-|    Task     |Version| Metric |Value|   |Stderr|
-|-------------|------:|--------|----:|---|-----:|
-|arc_challenge|      0|acc     |54.69|±  |  1.45|
-|             |       |acc_norm|57.59|±  |  1.44|
-|arc_easy     |      0|acc     |83.71|±  |  0.76|
-|             |       |acc_norm|81.86|±  |  0.79|
-|boolq        |      1|acc     |84.50|±  |  0.63|
-|hellaswag    |      0|acc     |61.49|±  |  0.49|
-|             |       |acc_norm|80.57|±  |  0.39|
-|openbookqa   |      0|acc     |35.00|±  |  2.14|
-|             |       |acc_norm|46.00|±  |  2.23|
-|piqa         |      0|acc     |80.14|±  |  0.93|
-|             |       |acc_norm|81.01|±  |  0.92|
-|winogrande   |      0|acc     |74.11|±  |  1.23|
-
-Average: 72.24%
 
 ### bigbench
 |                      Task                      |Version|       Metric        |Value|   |Stderr|
@@ -71,6 +53,24 @@ Average: 72.24%
 
 Average: 39.26%
 
+### gpt4all
+|    Task     |Version| Metric |Value|   |Stderr|
+|-------------|------:|--------|----:|---|-----:|
+|arc_challenge|      0|acc     |54.69|±  |  1.45|
+|             |       |acc_norm|57.59|±  |  1.44|
+|arc_easy     |      0|acc     |83.71|±  |  0.76|
+|             |       |acc_norm|81.86|±  |  0.79|
+|boolq        |      1|acc     |84.50|±  |  0.63|
+|hellaswag    |      0|acc     |61.49|±  |  0.49|
+|             |       |acc_norm|80.57|±  |  0.39|
+|openbookqa   |      0|acc     |35.00|±  |  2.14|
+|             |       |acc_norm|46.00|±  |  2.23|
+|piqa         |      0|acc     |80.14|±  |  0.93|
+|             |       |acc_norm|81.01|±  |  0.92|
+|winogrande   |      0|acc     |74.11|±  |  1.23|
+
+Average: 72.24%
+
 ### truthfulqa
 |    Task     |Version|Metric|Value|   |Stderr|
 |-------------|------:|------|----:|---|-----:|
@@ -85,18 +85,20 @@ Metadata: {'elapsed_time': '11:34:38', 'gpu': 'NVIDIA A100 80GB PCIe'}
 
 ## openllm results 
 
- |Benchmark|                          Model                           |winogrande| arc |gsm8k|mmlu |truthfulqa|hellaswag|Average|
-|---------|----------------------------------------------------------|---------:|----:|----:|----:|---------:|--------:|------:|
-|openllm  |[llama-airo-3](https://huggingface.co/saucam/llama-airo-3)|     78.22|61.01|56.33|64.79|     56.35|    82.42|  66.52|
+ |Benchmark|                          Model                           |gsm8k| arc |hellaswag|mmlu |truthfulqa|winogrande|Average|
+|---------|----------------------------------------------------------|----:|----:|--------:|----:|---------:|---------:|------:|
+|openllm  |[llama-airo-3](https://huggingface.co/saucam/llama-airo-3)|56.33|61.01|    82.42|64.79|     56.35|     78.22|  66.52|
 
-### winogrande
-|   Task   |Version|    Metric     |  Value   |   |Stderr|
-|----------|------:|---------------|----------|---|------|
-|winogrande|      1|acc,none       |      0.78|   |      |
-|          |       |acc_stderr,none|      0.01|   |      |
-|          |       |alias          |winogrande|   |      |
+### gsm8k
+|Task |Version|              Metric               |Value|   |Stderr|
+|-----|------:|-----------------------------------|-----|---|------|
+|gsm8k|      3|exact_match,strict-match           | 0.56|   |      |
+|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
+|     |       |exact_match,flexible-extract       | 0.57|   |      |
+|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
+|     |       |alias                              |gsm8k|   |      |
 
-Average: 78.22%
+Average: 56.33%
 
 ### arc
 |    Task     |Version|       Metric       |    Value    |   |Stderr|
@@ -109,16 +111,16 @@ Average: 78.22%
 
 Average: 61.01%
 
-### gsm8k
-|Task |Version|              Metric               |Value|   |Stderr|
-|-----|------:|-----------------------------------|-----|---|------|
-|gsm8k|      3|exact_match,strict-match           | 0.56|   |      |
-|     |       |exact_match_stderr,strict-match    | 0.01|   |      |
-|     |       |exact_match,flexible-extract       | 0.57|   |      |
-|     |       |exact_match_stderr,flexible-extract| 0.01|   |      |
-|     |       |alias                              |gsm8k|   |      |
+### hellaswag
+|  Task   |Version|       Metric       |  Value  |   |Stderr|
+|---------|------:|--------------------|---------|---|------|
+|hellaswag|      1|acc,none            |     0.62|   |      |
+|         |       |acc_stderr,none     |        0|   |      |
+|         |       |acc_norm,none       |     0.82|   |      |
+|         |       |acc_norm_stderr,none|        0|   |      |
+|         |       |alias               |hellaswag|   |      |
 
-Average: 56.33%
+Average: 82.42%
 
 ### mmlu
 |                  Task                  |Version|    Metric     |                 Value                 |   |Stderr|
@@ -376,16 +378,14 @@ Average: 64.79%
 
 Average: 56.35%
 
-### hellaswag
-|  Task   |Version|       Metric       |  Value  |   |Stderr|
-|---------|------:|--------------------|---------|---|------|
-|hellaswag|      1|acc,none            |     0.62|   |      |
-|         |       |acc_stderr,none     |        0|   |      |
-|         |       |acc_norm,none       |     0.82|   |      |
-|         |       |acc_norm_stderr,none|        0|   |      |
-|         |       |alias               |hellaswag|   |      |
+### winogrande
+|   Task   |Version|    Metric     |  Value   |   |Stderr|
+|----------|------:|---------------|----------|---|------|
+|winogrande|      1|acc,none       |      0.78|   |      |
+|          |       |acc_stderr,none|      0.01|   |      |
+|          |       |alias          |winogrande|   |      |
 
-Average: 82.42%
+Average: 78.22%
 
 Average score: 66.52%
 
