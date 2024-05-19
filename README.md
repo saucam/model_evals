@@ -12,6 +12,7 @@
 | [Orpomis-Prime-7B-it](https://huggingface.co/saucam/Orpomis-Prime-7B-it) | [complete result](saucam/Orpomis-Prime-7B-it/README.md) | 55.67 | 61.26 | 24.34 | 79.61 | 51.55 | 43.68 | 73.56 |
 | [Orpomis-Prime-7B](https://huggingface.co/saucam/Orpomis-Prime-7B) | [complete result](saucam/Orpomis-Prime-7B/README.md) | 55.27 | 60.67 | 24.41 | 79.12 | 52.43 | 41.02 | 73.95 |
 | [PowerBot-8B](https://huggingface.co/saucam/PowerBot-8B) | [complete result](saucam/PowerBot-8B/README.md) | 67.62 | 60.92 | 69.07 | 83.24 | 66.62 | 45.11 | 80.74 |
+| [Proteus-8B](https://huggingface.co/saucam/Proteus-8B) | [complete result](saucam/Proteus-8B/README.md) | 70.67 | 63.48 | 78.77 | 82.94 | 64.71 | 56.71 | 77.43 |
 | [Saga-8B](https://huggingface.co/saucam/Saga-8B) | [complete result](saucam/Saga-8B/README.md) | 52.29 | 51.11 | 24.18 | 74.1 | 50.65 | 41.19 | 72.53 |
 | [aqua-smaug-0.2-8B](https://huggingface.co/saucam/aqua-smaug-0.2-8B) | [complete result](saucam/aqua-smaug-0.2-8B/README.md) | 65.52 | 60.15 | 59.44 | 82.65 | 65.51 | 47.28 | 78.06 |
 | [aqua-smaug-0.3-8B](https://huggingface.co/saucam/aqua-smaug-0.3-8B) | [complete result](saucam/aqua-smaug-0.3-8B/README.md) | 69.73 | 62.37 | 76.19 | 83.02 | 66.0 | 53.7 | 77.11 |
