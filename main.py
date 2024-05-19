@@ -8,11 +8,13 @@ import os
 import requests
 import base64
 import json
+import shutil
 from collections import defaultdict
 
 from pytablewriter import MarkdownTableWriter
 
 GITHUB_API_TOKEN = os.getenv("GITHUB_API_TOKEN")
+
 
 def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     # Variables
@@ -22,14 +24,63 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     for test_file in os.listdir(directory):
         test_file_path = os.path.join(directory, test_file)
         print(f"test_file_path = {test_file_path}")
-        if test_file.endswith('.json'):
-            task, _ = os.path.splitext(test_file)
-            json_data = open(test_file_path, "r").read()
-            data = json.loads(json_data, strict=False)
-            table, average = make_table(data, task, benchmark)
-            tables.append(table)
-            tasks.append(task)
-            averages.append(average)
+        if test_file.endswith(".json"):
+            # Check if this is a dir or file
+            if os.path.isdir(test_file_path):
+                new_dir_path = os.path.join(directory, "results_temp")
+                if not os.path.exists(new_dir_path):
+                    os.makedirs(new_dir_path)
+                # This is new path!
+                for sub_dir in os.listdir(test_file_path):
+                    sub_dir_path = os.path.join(test_file_path, sub_dir)
+                    if os.path.isdir(sub_dir_path):
+                        for result_file in os.listdir(sub_dir_path):
+                            result_file_path = os.path.join(sub_dir_path, result_file)
+                            if result_file.startswith(
+                                "results_"
+                            ) and result_file.endswith(".json"):
+                                task, _ = os.path.splitext(test_file)
+                                # Find json file within this dir
+                                json_data = open(result_file_path, "r").read()
+                                data = json.loads(json_data, strict=False)
+                                table, average = make_table(data, task, benchmark)
+                                tables.append(table)
+                                tasks.append(task)
+                                averages.append(average)
+                                # Move dir
+
+                                new_file_name = f"{task}.json"
+                                new_file_path = os.path.join(
+                                    new_dir_path, new_file_name
+                                )
+                                shutil.move(result_file_path, new_file_path)
+                                print(
+                                    f"Moved and renamed {result_file_path} to {new_file_path}"
+                                )
+
+                                # Remove the sub_dir
+                                shutil.rmtree(test_file_path)
+                                print(f"Removed directory: {test_file_path}")
+
+                                # Move the json files
+                                parent_dir = directory
+                                for file in os.listdir(new_dir_path):
+                                    if file.endswith(".json"):
+                                        file_path = os.path.join(new_dir_path, file)
+                                        new_file_path = os.path.join(parent_dir, file)
+                                        shutil.move(file_path, new_file_path)
+                                        print(f"Moved {file_path} to {new_file_path}")
+
+            else:
+                task, _ = os.path.splitext(test_file)
+                # This is file, go with old flow
+                json_data = open(test_file_path, "r").read()
+                data = json.loads(json_data, strict=False)
+                table, average = make_table(data, task, benchmark)
+                tables.append(table)
+                tasks.append(task)
+                averages.append(average)
+
     # Generate tables
     summary = ""
     for index, task in enumerate(tasks):
@@ -50,7 +101,7 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     summary = final_table + "\n" + summary
 
     # Read elapsed time from json
-    
+
     return final_table_json, summary
 
     # Tasks
@@ -64,6 +115,7 @@ def _make_summary(directory: str, model_name: str, benchmark: str) -> str:
     #     raise NotImplementedError(
     #         f"The benchmark {BENCHMARK} could not be found."
     #     )
+
 
 def make_final_table(result_dict, model_name, benchmark):
     """Generate table of results with model name.
@@ -80,8 +132,9 @@ def make_final_table(result_dict, model_name, benchmark):
     md_writer.headers = ["Benchmark"] + ["Model"] + list(result_dict.keys())
 
     # The values in the table will be the model name and then the values from the dictionary
-    values = [ benchmark,
-        f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})"
+    values = [
+        benchmark,
+        f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})",
     ] + list(result_dict.values())
 
     # The table only has one row of values
@@ -89,6 +142,7 @@ def make_final_table(result_dict, model_name, benchmark):
 
     # Return the table as a markdown formatted string
     return md_writer.dumps()
+
 
 def make_final_table_json(result_dict, model_name, benchmark):
     """Generate table of results with model name.
@@ -102,16 +156,21 @@ def make_final_table_json(result_dict, model_name, benchmark):
     """
     json_dict = result_dict.copy()
     json_dict["Benchmark"] = benchmark
-    json_dict["Model"] = f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})"
+    json_dict["Model"] = (
+        f"[{model_name.split('/')[-1]}](https://huggingface.co/{model_name})"
+    )
     json_dict["ModelName"] = model_name
     j = json.dumps(json_dict)
     return j
 
+
 def get_acc_norm(data):
     accs = [
-        data["results"][k]["acc_norm"]
-        if "acc_norm" in data["results"][k]
-        else data["results"][k]["acc"]
+        (
+            data["results"][k]["acc_norm"]
+            if "acc_norm" in data["results"][k]
+            else data["results"][k]["acc"]
+        )
         for k in data["results"]
     ]
     acc = sum(accs) / len(accs) * 100
@@ -210,7 +269,10 @@ def make_table(result_dict, task, bench):
 
     return md_writer.dumps(), average
 
-def upload_file_to_github(token, repo_owner, repo_name, file_path, file_content, commit_message):
+
+def upload_file_to_github(
+    token, repo_owner, repo_name, file_path, file_content, commit_message
+):
     """
     Uploads a file to a GitHub repository. If the file already exists, it replaces it.
 
@@ -252,6 +314,7 @@ def upload_file_to_github(token, repo_owner, repo_name, file_path, file_content,
     response = requests.put(url, headers=headers, json=data)
     return response.json()  # Return the JSON response
 
+
 def upload_to_github_gist(text, gist_name, gh_token):
     # Create the gist content
     gist_content = {
@@ -284,6 +347,7 @@ def upload_to_github_gist(text, gist_name, gh_token):
     except Exception:
         print(f"Exception")
 
+
 def main(directory: str, model_name: str) -> tuple[str, str]:
     # model_name = os.path.basename(directory)
     print(f"model name = {model_name}")
@@ -294,7 +358,9 @@ def main(directory: str, model_name: str) -> tuple[str, str]:
         print(f"benchmark_path = {benchmark_path}")
         if os.path.isdir(benchmark_path):
             # Tasks
-            final_table_json, summary = _make_summary(directory=benchmark_path, model_name=model_name, benchmark=benchmark)
+            final_table_json, summary = _make_summary(
+                directory=benchmark_path, model_name=model_name, benchmark=benchmark
+            )
             metadata_path = os.path.join(directory, f"summary_{benchmark}.json")
             json_data = open(metadata_path, "r").read()
             data = json.loads(json_data, strict=False)
@@ -304,41 +370,53 @@ def main(directory: str, model_name: str) -> tuple[str, str]:
             # all_final_table += f"{final_table}\n\n"
     return all_final_table, all_summary
 
-            # upload_to_github_gist(
-            #     summary,
-            #     f"{model_name}-{benchmark.capitalize()}.md",
-            #     GITHUB_API_TOKEN,
-            # )
+    # upload_to_github_gist(
+    #     summary,
+    #     f"{model_name}-{benchmark.capitalize()}.md",
+    #     GITHUB_API_TOKEN,
+    # )
+
 
 def group_and_generate_tables(json_data):
     # Parse JSON data and group by benchmark
     data_by_benchmark = defaultdict(list)
     for item in json_data:
         entry = json.loads(item)
-        data_by_benchmark[entry['Benchmark']].append(entry)
-    
+        data_by_benchmark[entry["Benchmark"]].append(entry)
+
     markdown_tables = {}
-    
+
     # Process each benchmark group
     for benchmark, entries in data_by_benchmark.items():
         # Sort entries by model name
-        entries.sort(key=lambda x: x['Model'])
-        
+        entries.sort(key=lambda x: x["Model"])
+
         # Extract headers from sorted entries
-        headers = sorted({key for entry in entries for key in entry.keys() if key not in ['Benchmark', 'Model', 'ModelName']})
-        headers = ['Model', 'Details'] + headers  # Adding 'Model' as the first column
-        
+        headers = sorted(
+            {
+                key
+                for entry in entries
+                for key in entry.keys()
+                if key not in ["Benchmark", "Model", "ModelName"]
+            }
+        )
+        headers = ["Model", "Details"] + headers  # Adding 'Model' as the first column
+
         # Create Markdown table
         table = "| " + " | ".join(headers) + " |\n"
         table += "|---" * len(headers) + "|\n"
-        
+
         for entry in entries:
-            row = [entry.get("Model"), f"[complete result]({entry.get('ModelName')}/README.md)"] + [str(entry.get(h, '')) for h in headers[2:]]
+            row = [
+                entry.get("Model"),
+                f"[complete result]({entry.get('ModelName')}/README.md)",
+            ] + [str(entry.get(h, "")) for h in headers[2:]]
             table += "| " + " | ".join(row) + " |\n"
-        
+
         markdown_tables[benchmark] = table
-    
+
     return markdown_tables
+
 
 if __name__ == "__main__":
     # Create the parser
@@ -365,7 +443,7 @@ if __name__ == "__main__":
     results_summary = []
     for user_name in os.listdir(args.directory):
         # Skip directories starting with a dot
-        if user_name.startswith('.'):
+        if user_name.startswith("."):
             continue
         username_path = os.path.join(args.directory, user_name)
         if os.path.isdir(username_path):
@@ -380,10 +458,18 @@ if __name__ == "__main__":
                     for r in final_table:
                         results_summary.append(r)
                     summary = details
-                    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", f"{user_name}/{model_name}/README.md", summary, f"Update results for {model_name}")
+                    upload_file_to_github(
+                        GITHUB_API_TOKEN,
+                        "saucam",
+                        "model_evals",
+                        f"{user_name}/{model_name}/README.md",
+                        summary,
+                        f"Update results for {model_name}",
+                    )
     tables = group_and_generate_tables(results_summary)
     for benchmark, table in tables.items():
         readme += f"\n\n### {benchmark} Benchmark results\n\n"
         readme += table
-    upload_file_to_github(GITHUB_API_TOKEN, "saucam", "model_evals", "README.md", readme, "Update Readme")
-
+    upload_file_to_github(
+        GITHUB_API_TOKEN, "saucam", "model_evals", "README.md", readme, "Update Readme"
+    )
